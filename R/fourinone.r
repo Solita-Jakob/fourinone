@@ -61,7 +61,7 @@ four_in_one<-function(y,x){
   
   grid.arrange(p1, p2, p3, p4, nrow = 2)
 }
-#
+
 
 
 # fourinone(y=economics$pce,x=economics$psavert)
