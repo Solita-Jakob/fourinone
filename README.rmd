@@ -19,4 +19,9 @@ devtools::install_github('Solita-Jakob/fourinone')
 
 In case you miss the package devtools, you call install it by removing the comment (#) and then run install.packages("devtools"). This is what it looks like.
 
+```r
+library(fourinone)
+four_in_one(y=economics$pce,x=economics$psavert)
+```
+
 ![Four_in_one_plot](four_in_one.png)
