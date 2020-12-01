@@ -18,7 +18,7 @@ Provide a y variable and a x variable, preferably from a timeseries.
 
 }
 \value{
-Returnerar värden:  id, namn och sektorid.
+
 
 }
 \references{
