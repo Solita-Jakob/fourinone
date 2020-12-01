@@ -62,6 +62,7 @@ four_in_one<-function(y,x){
   grid.arrange(p1, p2, p3, p4, nrow = 2)
 }
 
+four_in_one(iris$Sepal.Length,iris$Sepal.Width)
 
 
 
