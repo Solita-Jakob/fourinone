@@ -1,0 +1,17 @@
+Package: fourinone
+Type: Package
+Title: Borsdata API
+Version: 0.1.0
+Author: Jakob Johannesson
+Imports:
+    tidyverse, gridExtra
+Maintainer: Jakob Johannesson <jakob.johannesson@solita.se>
+Description: Skapar en four in one plot
+License: MIT
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+Suggests: 
+    knitr,
+    rmarkdown
+RoxygenNote: 7.1.0

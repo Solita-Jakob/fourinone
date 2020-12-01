@@ -1,0 +1,22 @@
+---
+title: "Four in one plot"
+author: Jakob Johannesson
+date: 1 December, 2020
+output:
+  md_document:
+  variant: markdown_github
+---
+# Create a four in one plot in R
+
+
+
+## Installing from GitHub:
+
+```r
+# install.packages("devtools")
+devtools::install_github('Solita-Jakob/fourinone')
+```
+
+In case you miss the package devtools, you call install it by removing the comment (#) and then run install.packages("devtools"). This is what it looks like.
+
+![Four_in_one_plot](four_in_one.png)

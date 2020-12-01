@@ -64,4 +64,4 @@ four_in_one<-function(y,x){
 
 
 
-# fourinone(y=economics$pce,x=economics$psavert)
+
