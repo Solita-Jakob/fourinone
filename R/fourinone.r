@@ -1,12 +1,11 @@
 #### Four in one plot #### 
-## Du behöver en tidsserie ##
 
 # Paket
 library(tidyverse)
 library(gridExtra)
 
 
-#### Funktionen vill ha en input på en y variabel och en x variabel
+#### The function expects a model as input, it is possible to use multiple x-variables
 four_in_one<-function(model = lm(y~x)){
   augment<-broom::augment(model)
   
