@@ -12,6 +12,27 @@ the comment (\#) and then run install.packages(“devtools”). This is what
 it looks like.
 
     library(fourinone)
-    four_in_one(y=economics$pce,x=economics$psavert)
 
-![Four\_in\_one\_plot](four_in_one.png)
+    ## Example 1
+    df<-data.frame(year = seq(1900,2020,1), value = rnorm(121, 5, 2.5))
+    four_in_one(lm(value~year,data = df)) # Input is a model
+
+![Four\_in\_one\_plot](fourinone.png)
+
+    ## Example 2 - creating x^2 sample data
+    sample_data<-100
+    for(i in -10:10){
+      sample_data<-c(rnorm(10,i^2,20), sample_data)
+    }
+    df<-data.frame(time=1800:2010, value=sample_data)
+
+    four_in_one(lm(value~time,data = df)) # Bad fit
+
+    ggplot(df, aes(time,value))+ # Clearly x^2 shape
+      geom_point()+
+      geom_smooth(method = "lm",se = FALSE)
+      
+    df$time2<-df$time^2 
+    four_in_one(lm(value~time+time2,data = df)) # Great fit
+
+Created by Jakob Johannesson
