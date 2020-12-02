@@ -7,14 +7,12 @@ library(gridExtra)
 
 
 #### Funktionen vill ha en input på en y variabel och en x variabel
-four_in_one<-function(y,x){
-  
-  modell<-lm(y~x)
-  augment<-broom::augment(modell)
+four_in_one<-function(model = lm(y~x)){
+  augment<-broom::augment(model)
   
   p1<-ggplot(augment, aes(sample=.std.resid))+stat_qq(color="lightblue")+
     geom_abline(slope = 1,intercept = 0,color="red")+
-    labs(x="Standardized Residual", y="Percent", title= "Normal Probability Plot")+
+    labs(x="Standardized Residual", y="Sample", title= "Normal Probability Plot")+
     theme_bw() + 
     theme(plot.title =
             element_text(
@@ -46,7 +44,7 @@ four_in_one<-function(y,x){
               size = 14
             ))
   
-  p4<-ggplot(augment, aes(y,.std.resid))+
+  p4<-ggplot(augment, aes(seq(1,length(.std.resid),1),.std.resid))+
     geom_point(color="lightblue")+
     geom_line()+
     geom_hline(yintercept = 0, linetype = "dashed", color = "red")+
@@ -61,8 +59,4 @@ four_in_one<-function(y,x){
   
   grid.arrange(p1, p2, p3, p4, nrow = 2)
 }
-
-four_in_one(iris$Sepal.Length,iris$Sepal.Width)
-
-
 
